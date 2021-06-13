@@ -5,6 +5,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.util.concurrent.TimeUnit;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -14,9 +16,9 @@ public class SampleTest {
     public void someTest(){
        WebDriver webDriver = new ChromeDriver();
 
-       webDriver.get("http://localhost:8080/onlinebookstore/");
+       webDriver.get("http://localhost:8083/onlinebookstore/");
        System.out.println("URL is valid");
-       assertEquals( "http://localhost:8080/onlinebookstore/",webDriver.getCurrentUrl());
+       assertEquals( "http://localhost:8083/onlinebookstore/",webDriver.getCurrentUrl());
        assertEquals( "Book Store", webDriver.getTitle());
 
        webDriver.quit();
@@ -26,7 +28,7 @@ public class SampleTest {
     public void adminLogin() {
         WebDriver webDriver = new ChromeDriver();
         System.out.println("Click on Login as Admin button");
-        webDriver.get("http://localhost:8080/onlinebookstore/");
+        webDriver.get("http://localhost:8083/onlinebookstore/");
         webDriver.findElement(By.xpath("/html/body/table[2]")).click();
         System.out.println("username");
         webDriver.findElement(By.xpath("/html/body/table[2]/tbody/tr/td/form/input[1]")).sendKeys("Admin");
@@ -39,7 +41,7 @@ public class SampleTest {
         public void removeBook() {
             WebDriver webDriver = new ChromeDriver();
             System.out.println("Click on Login as Admin button");
-            webDriver.get("http://localhost:8080/onlinebookstor");
+            webDriver.get("http://localhost:8083/onlinebookstor");
             webDriver.findElement(By.xpath("/html/body/table[2]")).click();
             System.out.println("username");
             webDriver.findElement(By.xpath("/html/body/table[2]/tbody/tr/td/form/input[1]")).sendKeys("Admin");
@@ -57,7 +59,7 @@ public class SampleTest {
             public void AddBook() {
                 WebDriver webDriver = new ChromeDriver();
                 System.out.println("Book was added succesfuly");
-                webDriver.get("http://localhost:8080/onlinebookstore/");
+                webDriver.get("http://localhost:8083/onlinebookstore/");
                 webDriver.findElement(By.xpath("/html/body/table[2]")).click();
                 System.out.println("username");
                 webDriver.findElement(By.xpath("/html/body/table[2]/tbody/tr/td/form/input[1]")).sendKeys("Admin");
@@ -79,7 +81,7 @@ public class SampleTest {
     public void userLogin() {
         WebDriver webDriver = new ChromeDriver();
         System.out.println("Welcome");
-        webDriver.get("http://localhost:8080/onlinebookstore/");
+        webDriver.get("http://localhost:8083/onlinebookstore/");
         webDriver.findElement(By.xpath("/html/body/table[3]")).click();
         System.out.println("username");
         webDriver.findElement(By.xpath("/html/body/table[2]/tbody/tr/td/form/input[1]")).sendKeys("sis");
@@ -94,7 +96,7 @@ public class SampleTest {
         public void buyBooks() {
             WebDriver webDriver = new ChromeDriver();
             System.out.println("You have suucesfuly both a book");
-            webDriver.get("http://localhost:8080/onlinebookstore/");
+            webDriver.get("http://localhost:8083/onlinebookstore/");
             webDriver.findElement(By.xpath("/html/body/table[3]")).click();
             System.out.println("username");
             webDriver.findElement(By.xpath("/html/body/table[2]/tbody/tr/td/form/input[1]")).sendKeys("lokni");
@@ -112,7 +114,7 @@ public class SampleTest {
     public void userRegistr() {
         WebDriver webDriver = new ChromeDriver();
         System.out.println("User was registered succesfuly");
-        webDriver.get("http://localhost:8080/onlinebookstore/");
+        webDriver.get("http://localhost:8083/onlinebookstore/");
         webDriver.findElement(By.xpath("/html/body/table[4]")).click();
 
         webDriver.findElement(By.xpath("/html/body/table[2]/tbody/tr/td/form/input[1]")).sendKeys("Sis");
@@ -124,16 +126,20 @@ public class SampleTest {
         webDriver.findElement(By.xpath("/html/body/table[2]/tbody/tr/td/form/input[7]")).sendKeys("sups");
         webDriver.findElement(By.xpath("/html/body/table[2]/tbody/tr/td/form/input[8]")).click();
 
-
-
-
-
-
-
-
-
-
+    }
+    @Test
+    public void MoodleLogin() {
+        WebDriver webDriver = new ChromeDriver();
+        webDriver.get("https://moodle.chnu.edu.ua/login/index.php");
+        webDriver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+        webDriver.findElement(By.xpath("//*[@id=\"region-main\"]/div/div/div/div/div/div/div[2]/div[1]/div/a")).click();
+        webDriver.findElement(By.xpath("//*[@id=\"identifierId\"]")).sendKeys("prokopets.yevhen@chnu.edu.ua");
+        webDriver.findElement(By.xpath("//*[@id=\"identifierNext\"]/div/button")).click();
+        webDriver.findElement(By.name("password")).sendKeys("Toradora1");
+        webDriver.findElement(By.xpath("//*[@id=\"passwordNext\"]/div/button")).click();
 
 
     }
+
+
 }
