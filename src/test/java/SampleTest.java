@@ -10,7 +10,7 @@ public class SampleTest {
     WebDriver webDriver;
     @Test
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "D:\\chromedriver_win32\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "workspace/allure_reports/chromedriver.exe");
         WebDriver webDriver = new ChromeDriver();
 
         webDriver.get("https://moodle.chnu.edu.ua/login/index.php");
