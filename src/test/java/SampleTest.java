@@ -67,7 +67,7 @@ public class SampleTest {
                 webDriver.findElement(By.xpath("/html/body/table[2]/tbody/tr/td/form/input[2]")).sendKeys("Admin");
                 webDriver.findElement(By.xpath("/html/body/table[2]/tbody/tr/td/form/input[3]")).click();
                 webDriver.findElement(By.xpath("/html/body/div[7]")).click();
-                webDriver.findElement(By.xpath("/html/body/table[2]/tbody/tr/td/form/input[1]")).sendKeys("0103");
+                webDriver.findElement(By.xpath("/html/body/table[2]/tbody/tr/td/form/input[1]")).sendKeys("0106");
                 webDriver.findElement(By.xpath("/html/body/table[2]/tbody/tr/td/form/input[2]")).sendKeys("Maven is cool");
                 webDriver.findElement(By.xpath("/html/body/table[2]/tbody/tr/td/form/input[3]")).sendKeys("Laravel");
                 webDriver.findElement(By.xpath("/html/body/table[2]/tbody/tr/td/form/input[4]")).sendKeys("200");
@@ -117,7 +117,7 @@ public class SampleTest {
         webDriver.get("http://localhost:8083/onlinebookstore/");
         webDriver.findElement(By.xpath("/html/body/table[4]")).click();
 
-        webDriver.findElement(By.xpath("/html/body/table[2]/tbody/tr/td/form/input[1]")).sendKeys("Sis");
+        webDriver.findElement(By.xpath("/html/body/table[2]/tbody/tr/td/form/input[1]")).sendKeys("Sim");
         webDriver.findElement(By.xpath("/html/body/table[2]/tbody/tr/td/form/input[2]")).sendKeys("qwe");
         webDriver.findElement(By.xpath("/html/body/table[2]/tbody/tr/td/form/input[3]")).sendKeys("molingen");
         webDriver.findElement(By.xpath("/html/body/table[2]/tbody/tr/td/form/input[4]")).sendKeys("Dis");
