@@ -10,7 +10,6 @@ public class SampleTest {
     WebDriver webDriver;
     @Test
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
         WebDriver webDriver = new ChromeDriver();
 
         webDriver.get("https://moodle.chnu.edu.ua/login/index.php");
