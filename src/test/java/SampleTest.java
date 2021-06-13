@@ -11,8 +11,9 @@ import java.util.concurrent.TimeUnit;
 public class SampleTest {
 
     @Test
-    public void MoodleLogin() {
+    public void MoodleLogin() throws InterruptedException {
         WebDriver webDriver = new ChromeDriver();
+        Thread.sleep(1000);
         webDriver.get("https://moodle.chnu.edu.ua/login/index.php");
         webDriver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         webDriver.findElement(By.xpath("//*[@id=\"region-main\"]/div/div/div/div/div/div/div[2]/div[1]/div/a")).click();
