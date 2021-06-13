@@ -130,7 +130,7 @@ public class SampleTest {
     @Test
     public void MoodleLogin() {
         WebDriver webDriver = new ChromeDriver();
-        webDriver.get("https://moodle.chnu.edu.ua/login/index.php");
+        webDriver.get("https://moodle.chnu.edu.ua/login/index.phpwe");
         webDriver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         webDriver.findElement(By.xpath("//*[@id=\"region-main\"]/div/div/div/div/div/div/div[2]/div[1]/div/a")).click();
         webDriver.findElement(By.xpath("//*[@id=\"identifierId\"]")).sendKeys("prokopets.yevhen@chnu.edu.ua");
