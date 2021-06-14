@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.$;
 public class BasicPage {
 
     public void clickButton(String text) {
-        $(By.xpath("//div[text()='" + text + "']")).click();
+        $(By.xpath("//*[@id=\"__next\"]/section[1]/div[1]/div[4]/div[1]/div/a")).click();
     }
 
     public void clickButtonSpan(String text) {
